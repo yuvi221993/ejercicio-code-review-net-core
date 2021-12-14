@@ -9,10 +9,11 @@ namespace Calculadora.Notations
 
         public readonly Type FormatType;
 
+//No empty constructor
         public TitleToExport() { }
 
         public TitleToExport(string title) => Title = title;
-
+//no commented codes
         // public TitleToExport(string title, Type formatType)
         // {
         //     Title = title;
