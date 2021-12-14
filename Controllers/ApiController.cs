@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Calculadora.Controllers
 {
+// need to mention ApiVersion
     [ApiController]
     [Route("[controller]/[action]")]
     public class ApiController : ControllerBase
@@ -21,7 +22,7 @@ namespace Calculadora.Controllers
         private static List<HistoricoBaseViewModel> historicoList = new List<HistoricoBaseViewModel>(0);
 
         private readonly ILogger<ApiController> _logger;
-
+//use this in the controllers to refer to the current instance of the class
         public ApiController(
             ILogger<ApiController> logger,
             IEnumerable<ICalculatorService> calculatorServices
@@ -31,8 +32,10 @@ namespace Calculadora.Controllers
         }
 
         [HttpGet]
+        //route needs to be mentioned
         public IEnumerable<HistoricoBaseViewModel> Get() => historicoList;
 
+//route needs to be mentioned
         [HttpPost]
         public ActionResult Calcular([FromBody] RequestViewModel request)
         {
@@ -48,7 +51,7 @@ namespace Calculadora.Controllers
 
             return Ok(response);
         }
-
+//route needs to be mentioned
         [HttpGet]
         public FileResult Download()
         {
@@ -94,13 +97,18 @@ namespace Calculadora.Controllers
             return ((TitleToExport)field.GetCustomAttributes(typeof(TitleToExport), true).First());
         }
 
-
+//Remove unused methods
      public static void fibonacci()  
-      {  
-         int n1=0,n2=1,n3,i,number;    
-         Console.Write("Enter the number of elements: ");    
+      {  //variables needs to be named properly
+         int n1=0,n2=1,n3,i,number;
+         //No console  to be added
+         Console.Write("Enter the number of elements: ");  
+         //Input should not be taken in this way
          number = int.Parse(Console.ReadLine());  
-         Console.Write(n1+" "+n2+" "); //printing 0 and 1    
+         //No console  to be added
+         Console.Write(n1+" "+n2+" "); //printing 0 and 1   
+         //variables needs to be named properly
+         //better to use forEach loop
          for(i=2;i<number;++i) //loop starts from 2 because 0 and 1 are already printed    
          {    
           n3=n1+n2;    
