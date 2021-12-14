@@ -10,7 +10,7 @@ using Calculadora.Notations;
 using Calculadora.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-//remove unused ports
+//remove unused ports and have proper exception handling
 namespace Calculadora.Controllers
 {
 // need to mention ApiVersion
